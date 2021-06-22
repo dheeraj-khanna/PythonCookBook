@@ -1,3 +1,6 @@
+from collections import deque
+
+
 def unpack():
     """
     Unpacking a Sequence into Separate Variables
@@ -14,11 +17,13 @@ def unpack():
     p = (4, 5)
     x, y = p
     print(x, y)
+    print("# ==================================================================================== #")
 
     # create and unpack a list having mix data
     data = ['ACME', 50, 91.1, (2012, 12, 21)]
     name, shares, price, date = data
     print(name, " ", shares, " ", price, " ", date)
+    print("# ==================================================================================== #")
 
     # create and unpack a string
 
@@ -26,12 +31,14 @@ def unpack():
     a, b, c, d, e, f, g, h, i, j, k,l, m = s
     print(s)
     print(a,b,c,d,e,f,g,h,i,j,k,l,m)
+    print("# ==================================================================================== #")
 
     # When unpacking, you may sometimes want to discard certain values. Python has no special syntax
     # for this, but you can often just pick a throwaway variable name for it. For example:
     data = ['ACME', 50, 91.1, (2012, 12, 21)]
     __, shares,__, date = data
     print(shares, " ", date)
+    print("# ==================================================================================== #")
 
 
 def unpackNelements():
@@ -54,12 +61,15 @@ def unpackNelements():
     first, *second , last = grades
     avgMarks = sum(second) / len(grades)
     print("The avg marks of the student = ", avgMarks)
+    print("# ==================================================================================== #")
 
+
+    # ==================================================================================== #
     # another example
     record = ('Dave', 'dave@example.com', '773-555-1212', '847-555-1212','671-923-7508')
     name, email_addr, *phone_numbers = record
     print(name, email_addr, *phone_numbers)
-
+    # ==================================================================================== #
     # using star syntax on list of tupels
 
     records = [
@@ -70,6 +80,9 @@ def unpackNelements():
         ('Male  ', 'Markus ',21, 2000),
         ('Male  ', 'Jhon   ',21, 2000),
     ]
+
+    print("# ==================================================================================== #")
+    print("Sex   ","Name  ","Age    ", "DOB    ")
 
     def print_female(x, y, z):
         print('Female', x, y, z)
@@ -85,6 +98,30 @@ def unpackNelements():
         if tag == "Male":
             print_male(*args)
 
+    print("# ==================================================================================== #")
+
+    # ==================================================================================== #
+    line = 'nobody:*:-2:-2:Unprivileged User:/var/empty:/usr/bin/false'
+    uname, *fields, homedir, sh = line.split(":")
+    print(uname, " - ", homedir, " - ", sh)
+    print("# ==================================================================================== #")
+
+    # ==================================================================================== #
+    q = deque(maxlen=3)
+    q.append(1)
+    q.append(2)
+    q.append(3)
+
+    print("Queue values =", q)
+    print("# ==================================================================================== #")
+
+    q.append(4)
+
+
+
+# ===================================Calling Functions================================================= #
 
 # unpack()
+
+
 unpackNelements()
