@@ -62,15 +62,12 @@ def unpackNelements():
     avgMarks = sum(second) / len(grades)
     print("The avg marks of the student = ", avgMarks)
     print("# ==================================================================================== #")
+    # ===============================another example===
 
-
-    # ==================================================================================== #
-    # another example
     record = ('Dave', 'dave@example.com', '773-555-1212', '847-555-1212','671-923-7508')
     name, email_addr, *phone_numbers = record
     print(name, email_addr, *phone_numbers)
-    # ==================================================================================== #
-    # using star syntax on list of tupels
+    # ========================using star syntax on list of tupels===
 
     records = [
         ('Female', 'FLora  ',47, 1974),
@@ -100,13 +97,16 @@ def unpackNelements():
 
     print("# ==================================================================================== #")
 
-    # ==================================================================================== #
+    # Star unpacking can also be useful when combined with certain kinds of string processing operations,
+    # such as splitting for example
+
     line = 'nobody:*:-2:-2:Unprivileged User:/var/empty:/usr/bin/false'
     uname, *fields, homedir, sh = line.split(":")
     print(uname, " - ", homedir, " - ", sh)
     print("# ==================================================================================== #")
 
-    # ==================================================================================== #
+    # =====================================Keeping the Last N Items===
+
     q = deque(maxlen=3)
     q.append(1)
     q.append(2)
@@ -114,14 +114,27 @@ def unpackNelements():
 
     print("Queue values =", q)
     print("# ==================================================================================== #")
-
     q.append(4)
+    print("After adding 4 queue values =", q)
+    print("# ==================================================================================== #")
 
+    # ==================Finding the Largest or Smallest N Items===
+    # =====Problem: You want to make a list of the largest or smallest N items in a collection.
+    import heapq
+    nums = [1, 8, 2, 23, 7, -4, 18, 23, 42, 37, 2]
+    print("Original list number = ", nums)
+    print("Three largest number = ", heapq.nlargest(3, nums))
+    print("Three largest number = ", heapq.nsmallest(3, nums))
 
+    print("# ==================================================================================== #")
 
-# ===================================Calling Functions================================================= #
+    letters = ['z', 'x', 'y', 'a', 'b', 'c', 'u', 'v']
+    print("Original list letters = ", letters)
+    print("Three largest letters = ", heapq.nlargest(3, letters))
+    print("Three largest letters = ", heapq.nsmallest(3, letters))
+
+    # ===================================Calling Functions====
 
 # unpack()
-
 
 unpackNelements()
