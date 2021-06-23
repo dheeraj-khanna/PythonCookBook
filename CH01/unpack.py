@@ -1,6 +1,3 @@
-from collections import deque
-
-
 def unpack():
     """
     Unpacking a Sequence into Separate Variables
@@ -106,5 +103,5 @@ def unpackNelements():
     print("# ==================================================================================== #")
 
 
-# unpack()
+unpack()
 unpackNelements()
