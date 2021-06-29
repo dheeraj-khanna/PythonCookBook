@@ -41,4 +41,5 @@ def findlargestorsmallestnitem():
     print("Three high price shares      = ", heapq.nlargest(3, portfolio, key=lambda s: s['price']))
     print("Three lowest price shares    = ", heapq.nsmallest(3, portfolio, key=lambda s: s['price']))
 
+
 findlargestorsmallestnitem()
